@@ -1,0 +1,91 @@
+body{
+    background: linear-gradient(to right, #06cdf5, #fa4700, rgb(255, 0, 204));
+    margin-right: 10px;
+
+}
+.form{
+    width: 600px;
+    margin: 20vh auto 0 auto;
+    padding: 40px;
+    /* padding-right: 40px; */
+    height: 400px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 2px solid white;
+
+}
+#username, #password{
+    width: 600px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid rgb(255, 213, 0);
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h1{
+        text-align: center;
+        font-style: oblique;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 40px;
+}
+h3{
+    font-size: 22px;
+}
+
+/* .form h1{
+margin-top: 10px;
+padding: 10px;
+width: 100%;
+color: rgb(0, 0, 0);
+border: none;
+border-radius: 4px;
+text-align: center;
+
+} */
+#log[type="submit"] {
+    margin-top: 10px;
+    background-color: #ffd500;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 600px;
+    font-size: 18px;
+}
+#submit{
+    width: 320px;
+    justify-content: center;
+}
+
+.input-control{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-control input{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+
+
+}
+.input-control input:focus{
+    outline: 0;
+}
+.input-control.success input{
+    border-color: rgb(53, 221, 221);
+}
+.input-control.error input{
+    border-color: red;
+}
+.input-control .error{
+    color: red;
+    font-size: 9px;
+    height: 13px;
+} 

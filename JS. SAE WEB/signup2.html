@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Validation Form with Login</title>
+	<link rel="stylesheet" href="formv.css">
+
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		#sub[type="submit"] {
+			margin-top: 10px;
+            background-color: #ffd500;
+			color: rgb(0, 0, 0);
+			padding: 12px 20px;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+			width: 600px;
+            font-size: 18px;
+		}
+		.error {
+			color: rgb(0, 0, 0);
+			font-weight: bold;
+			margin-bottom: 5px;
+			
+		}
+        body {
+            margin: 80px;
+			font-family: Arial, sans-serif;
+			background-color: #464646;
+            color: white;
+		}
+
+	
+        h1,h2{
+            text-align: center;
+            font-style: oblique;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 40px;
+        }
+		input[type=text],input[type=email],input[type=password] {
+			width: 600px;
+			padding: 10px;
+			margin: 5px 0;
+			border: 2px solid rgb(255, 213, 0);
+			border-radius: 7px;
+			box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		}
+
+		#log[type=submit] {
+            margin-top: 10px;
+			background-color: #ffd500;
+			color: rgb(0, 0, 0);
+			padding: 12px 20px;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+			width: 600px;
+            font-size: 18px;
+		}
+
+		#log[type=submit]:hover {
+			background-color: #00ff0d;
+            color: black;
+		}
+
+		.error {
+			color: rgb(0, 0, 0);
+			font-size: 18px;
+		}
+		.success {
+			display: none;
+			position: absolute;
+			height: 30vh;
+			width: 50vw;
+			top: 100vh;
+			left: 18vw;
+			background-color: aqua;
+			padding: 50px;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 20px 20px 30px #222;
+		}
+		.signbox{
+			border: 6px solid white;
+			border-radius: 20px;
+			height: 560px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="signbox">
+	<h1>Register</h1>
+	<form action="">
+
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name">
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email">
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password">
+
+		<label for="confirm_password">Confirm Password:</label>
+		<input type="password" id="confirm_password" name="confirm_password">
+
+		<p id="para"> </p>
+
+		<input id="sub" type="submit" value="Submit">
+	
+
+	</form>
+</div>
+	<script>
+
+		var btn = document.getElementById('sub');
+
+		btn.addEventListener('click', (e) => {
+			e.preventDefault()
+			var name = document.getElementById("name").value
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var confirm_password = document.getElementById("confirm_password").value;
+			para = document.getElementById('para')
+			var error_message = "";
+			var pattern = /^([A-Za-z0-9\._]+)@([A-Za-z]).([A-Za-z\.]{2,})$/;
+
+			// console.log(name)
+			// console.log(email)
+			// console.log(password)
+
+			if ((name == "") || (email == "") || (password == "") || (confirm_password == "")) {
+				error_message += "<p class='error'>All fields must be filled.</p>";
+				para.innerHTML = error_message;
+				return false;
+			}
+
+			 if (!pattern.test(email)) {
+				
+					error_message += "<p class='error'>Please enter a valid email address.</p>";
+					para.innerHTML = error_message;
+					return false;
+				}
+
+
+			if (password.length < 8) {
+				error_message += "<p class='error'>Password must be at least 8 characters long.</p>";
+				para.innerHTML = error_message;
+				return false;
+			}
+
+		
+			 if (password != confirm_password) {
+				error_message += "<p class='error'>Passwords does not match.</p>";
+				para.innerHTML = error_message;
+				return false;
+			}
+			else{
+				para.innerHTML="success"
+				window.location.href="login_final.html";
+			}
+
+		});
+
+	</script>
+</body>
+
+</html>

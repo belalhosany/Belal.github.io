@@ -1,0 +1,22 @@
+body{
+    padding: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.read-more-container{
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+}
+.container{
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgb(17, 17, 17);
+}
+.read-more-btn{
+    color: #0984e3;
+}
+.read-more-text{
+    display: none;
+}
+.read-more-text--show{
+    display: inline;
+}

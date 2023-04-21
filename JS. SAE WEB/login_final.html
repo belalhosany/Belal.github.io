@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="formv.css">
+    <title>LOGIN FORM</title>
+</head>
+<body>
+    <div class="form">
+    <h1>Login</h1>
+	<form action="index.html">
+		<div id="error"></div>
+		<label for="username"><h3>Username:</h3></label>
+		<input type="text" id="username" name="username">
+
+		<label for="password"><h3>Password:</h3></label>
+		<input type="password" id="password" name="password">
+<br><br>
+		<input id="log" type="submit" value="Login" onclick="return login();">
+		
+	</form>
+
+	</div>
+ 
+ <script>	
+ 	function login() {
+	var username = document.getElementById("username").value;
+	var pass=document.getElementById("password").value
+	
+
+	// if (username ==="example" && password ==="password") 
+	
+	if(username === "Belal"){
+		alert("Login successful!");
+		return true;
+	} 
+	else {
+		alert("UnSuccessful");
+		return false;
+	}
+}
+</script>
+</html>
